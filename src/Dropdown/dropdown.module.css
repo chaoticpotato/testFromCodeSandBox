@@ -1,0 +1,87 @@
+.dropdown {
+  background-color: #f2f2f2;
+  cursor: pointer;
+  flex: 1 1 auto;
+  line-height: 1.5;
+  user-select: none;
+  border: 1px solid #ddd;
+  transition: all 0.1s ease;
+}
+
+.currentBox {
+  display: flex;
+  align-items: center;
+}
+
+.current {
+  padding: 0.5em 1em;
+  flex: 1;
+}
+
+.arrow {
+  padding-right: 0.4em;
+  pointer-events: none;
+  flex: 0;
+}
+.arrow svg {
+  width: 1.5em;
+  display: block;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-top: 0;
+}
+
+/* Items */
+.item {
+  padding: 0.4em 1em;
+  background-color: #efefef;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1.5;
+}
+
+.item:hover {
+  background-color: #2e41ad;
+  color: #fff;
+}
+
+.checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5em;
+  vertical-align: text-top;
+  border: 2px solid gray;
+  border-radius: 2px;
+  position: relative;
+}
+
+.checkbox:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  top: 6px;
+  left: 2px;
+  background-color: #fff;
+  box-shadow: 0 2px 0 0 #fff, 2px 2px 0 0 #fff, 4px 2px 0 0 #fff,
+    6px 2px 0 0 #fff;
+  transform: rotate(-45deg);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.item.isSelected .checkbox {
+  border-color: green;
+  background-color: green;
+}
+.item.isSelected .checkbox:after {
+  opacity: 1;
+}
